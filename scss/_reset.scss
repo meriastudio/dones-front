@@ -1,0 +1,38 @@
+//Reset styles
+html{
+  font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  line-height: 100%;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+menu {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+  outline: none !important;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a, a:hover, a:focus{
+	text-decoration: none;
+}
+
+a{
+	transition: $transition;
+}
+
+.results .container{
+  max-width: 990px;
+}
+

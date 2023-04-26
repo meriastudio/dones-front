@@ -1,0 +1,14 @@
+{
+  "name": "Dones",
+  "version": "1.0.0",
+  "description": "Dones front",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass -w ./scss/main.scss ./css/main.css"
+  },
+  "author": "MR",
+  "license": "PRIVATE",
+  "dependencies": {
+    "sass": "^1.62.0"
+  }
+}

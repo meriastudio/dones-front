@@ -1,0 +1,32 @@
+//Different devices resolutions
+@mixin respond-to($media) {
+    @if $media == phones-small {
+      @media only screen and (max-width: 490px) { @content; }
+    }
+    @if $media == phones {
+      @media only screen and (max-width: 767px) { @content; }
+    }
+    @else if $media == tablets-small {
+        @media only screen and (max-width: 991px) { @content; }
+    }
+    @else if $media == tablets-large {
+        @media only screen and (max-width: 1199px) { @content; }
+    }
+    @else if $media == desktops-small {
+        @media only screen and (max-width: 1399px) { @content; }
+    }
+    @else if $media == desktops {
+        @media only screen and (min-width: 1400px) { @content; }
+    }
+}
+
+//FontSize
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin fsz($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
