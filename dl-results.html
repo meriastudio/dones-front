@@ -12,10 +12,14 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
 <link href="js/jquery.fine-uploader/fine-uploader-new.min.css" rel="stylesheet" type="text/css">
+<link href="js/jquery.fine-uploader/fine-uploader-new.min.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-confirm.min.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-confirm.min.js"></script>
 <script src="js/jquery.fine-uploader/jquery.fine-uploader.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
 
 <script type="text/javascript" src="js/vendors/modernizr.js"></script>
 <script type="text/template" id="qq-template-manual-trigger">
@@ -76,7 +80,7 @@
 <body class="inner-page">
 <div class="wrapper">
 	<header>
-		<a href="#0" class="logo"><img src="images/public/dones-logo.png" alt="">Dones</a>
+		<a href="index.html" class="logo"><img src="images/public/dones-logo.png" alt="">Dones</a>
 		<div class="help-container pull-right">
 			<a class="xml-link" href="#0"><img src="images/elements/icon-xml.png" alt=""></a>
 			<a class="info-link" href="#0">i</a>
@@ -97,76 +101,76 @@
 	  	<div class="tab-content clearfix">
 		    <div role="tabpanel" class="tab-pane fade" id="metadata">
 		    	<div class="select-wrapper right caret-reverse">
-		    		<select class="selectpicker" data-size="10">
-							<option title="1 topic" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
-							<option title="2 topics" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
-							<option title="3 topics" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
-							<option title="4 topics" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
-							<option title="5 topics" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
-							<option title="6 topics" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
-							<option title="7 topics" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
-							<option title="8 topics" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
-							<option title="9 topics" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
-							<option title="10 topics" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
-						</select>
+		    		<select class="selectpicker" id="metatopic" data-size="10">
+						<option title="1 topic" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
+						<option title="2 topics" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
+						<option title="3 topics" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
+						<option title="4 topics" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
+						<option title="5 topics" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
+						<option title="6 topics" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
+						<option title="7 topics" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
+						<option title="8 topics" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
+						<option title="9 topics" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
+						<option title="10 topics" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
+					</select>
 		    	</div><!--select-wrapper-->
 
 		    	<div class="select-wrapper right caret-reverse">
-		    		<select class="selectpicker" data-size="10">
-							<option title="1 neighbor" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
-							<option title="2 neighbors" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
-							<option title="3 neighbors" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
-							<option title="4 neighbors" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
-							<option title="5 neighbors" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
-							<option title="6 neighbors" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
-							<option title="7 neighbors" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
-							<option title="8 neighbors" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
-							<option title="9 neighbors" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
-							<option title="10 neighbors" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
-						</select>
+		    		<select class="selectpicker" id="metaneighbor" data-size="10">
+						<option title="1 neighbor" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
+						<option title="2 neighbors" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
+						<option title="3 neighbors" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
+						<option title="4 neighbors" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
+						<option title="5 neighbors" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
+						<option title="6 neighbors" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
+						<option title="7 neighbors" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
+						<option title="8 neighbors" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
+						<option title="9 neighbors" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
+						<option title="10 neighbors" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
+					</select>
 		    	</div><!--select-wrapper-->
 
-					<form class="search" action="">
-						<div class="search-input-wrap"><textarea class="search-input" type="text" rows="1" placeholder="Search..."></textarea></div>
-						<button class="search-submit" disabled>¥</button>
-					</form>
+				<form class="search" action="">
+					<div class="search-input-wrap"><input class="search-input" type="text" placeholder="Search..."></textarea></div>
+					<button class="search-submit" disabled>¥</button>
+				</form>
 		    </div><!--tab-panel-->
 		    <div role="tabpanel" class="tab-pane fade" id="keyword">
 		    	<form class="search" action="">
-						<div class="search-input-wrap"><textarea class="search-input" type="text" rows="1" placeholder="Search..."></textarea></div>
-						<button class="search-submit" disabled>¥</button>
-					</form>
+					<div class="search-input-wrap"><input class="search-input" type="text" placeholder="Search..."></div>
+					<button class="search-submit" disabled>¥</button>
+				</form>
 		    </div><!--tabpanel-->
 		    <div role="tabpanel" class="tab-pane fade" id="by-example">
 	    		<form class="search drop" method="post" action="">
-						<div class="search-input-wrap drop">
-							<div class="search-input-drop">
-								<div id="fine-uploader-manual-trigger"></div>
-							</div>
+					<div class="search-input-wrap drop">
+						<div class="search-input-drop">
+							<div id="fine-uploader-manual-trigger"></div>
 						</div>
-						<button class="search-submit browse-submit" disabled>¥</button>
-					</form>
+					</div>
+					<button class="search-submit browse-submit" disabled>¥</button>
+				</form>
 		    </div><!--tabpanel-->
 		    <div role="tabpanel" class="tab-pane fade in active" id="library">
 		    	<div class="select-wrapper pull-right caret-reverse">
-		    		<select class="selectpicker" data-size="10">
-							<option title="1 neighbor" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
-							<option title="2 neighbors" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
-							<option title="3 neighbors" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
-							<option title="4 neighbors" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
-							<option title="5 neighbors" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
-							<option title="6 neighbors" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
-							<option title="7 neighbors" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
-							<option title="8 neighbors" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
-							<option title="9 neighbors" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
-							<option title="10 neighbors" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
-						</select>
+		    		<select class="selectpicker" id="libneighbor" data-size="10">
+						<option title="1 neighbor" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
+						<option title="2 neighbors" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
+						<option title="3 neighbors" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
+						<option title="4 neighbors" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
+						<option title="5 neighbors" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
+						<option title="6 neighbors" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
+						<option title="7 neighbors" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
+						<option title="8 neighbors" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
+						<option title="9 neighbors" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
+						<option title="10 neighbors" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover no-display'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
+					</select>
 		    	</div><!--select-wrapper-->
 
-					<form class="search" action="">
-						<div class="search-input-wrap"><textarea class="search-input" type="text" rows="1" placeholder="Search..."></textarea></div>
-						<button class="search-submit" disabled>¥</button>
-					</form>
+				<form class="search" action="">
+					<div class="search-input-wrap"><input class="search-input" type="text" placeholder="Search..."></div>
+					<button class="search-submit" disabled>¥</button>
+				</form>
 		    </div><!--tab-panel-->
 		  </div><!--tabs-content-->
 	  </div><!--tabs-content-wrapper-->
@@ -178,79 +182,80 @@
 			<div class="row">
 				<div class="col-md-9 col-sm-8 col-xs-12">
 					<div class="main-results clearfix">
-			    	<h5>Dones generated metadata</h5>
+				    	<h5>Dones generated metadata</h5>
+				    	<div id="neighbor_items">
+					    	<div class="neighbor-item clearfix">
+						    	<span class="relevancy rel-5">
+			  						<span class="overlay">5</span>
+									</span>
+					    		<h3>World Briefing | Europe: Ukraine: Putin Checks In</h3>
+					    		<div class="neighbor-buttons">
+					    			<a href="#0">DL</a>
+					    			<a class="n-view" href="#0" data-type="panel-1"><img src="images/elements/icon-preview.png" alt=""></a>
+					    			<a class="n-xml" href="#0" data-type="xml-panel-1"><img src="images/elements/icon-xml-dark.png" alt=""></a>
+					    		</div><!--neighbor-buttons-->
+					    	</div><!--neighbor-item-->
 
-			    	<div class="neighbor-item clearfix">
-				    	<span class="relevancy rel-5">
-	  						<span class="overlay">5</span>
-							</span>
-			    		<h3>World Briefing | Europe: Ukraine: Putin Checks In</h3>
-			    		<div class="neighbor-buttons">
-			    			<a href="#0">DL</a>
-			    			<a class="n-view" href="#0" data-type="panel-1"><img src="images/elements/icon-preview.png" alt=""></a>
-			    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
-			    		</div><!--neighbor-buttons-->
-			    	</div><!--neighbor-item-->
+					    	<div class="neighbor-item clearfix">
+						    	<span class="relevancy rel-5">
+			  						<span class="overlay">5</span>
+									</span>
+					    		<h3>World Briefing | Europe: Ukraine: Opposition Candidates</h3>
+					    		<div class="neighbor-buttons">
+					    			<a href="#0">DL</a>
+					    			<a class="n-view" href="#0" data-type="panel-2"><img src="images/elements/icon-preview.png" alt=""></a>
+					    			<a class="n-xml" href="#0" data-type="xml-panel-2"><img src="images/elements/icon-xml-dark.png" alt=""></a>
+					    		</div><!--neighbor-buttons-->
+					    	</div><!--neighbor-item-->
 
-			    	<div class="neighbor-item clearfix">
-				    	<span class="relevancy rel-5">
-	  						<span class="overlay">5</span>
-							</span>
-			    		<h3>World Briefing | Europe: Ukraine: Opposition Candidates</h3>
-			    		<div class="neighbor-buttons">
-			    			<a href="#0">DL</a>
-			    			<a class="n-view" href="#0" data-type="panel-2"><img src="images/elements/icon-preview.png" alt=""></a>
-			    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
-			    		</div><!--neighbor-buttons-->
-			    	</div><!--neighbor-item-->
+					    	<div class="neighbor-item clearfix">
+						    	<span class="relevancy rel-4">
+			  						<span class="overlay">4</span>
+									</span>
+					    		<h3>World Briefing | Europe: Ukraine: New Prime Minister</h3>
+					    		<div class="neighbor-buttons">
+					    			<a href="#0">DL</a>
+					    			<a class="n-view" href="#0" data-type="panel-3"><img src="images/elements/icon-preview.png" alt=""></a>
+					    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
+					    		</div><!--neighbor-buttons-->
+					    	</div><!--neighbor-item-->
 
-			    	<div class="neighbor-item clearfix">
-				    	<span class="relevancy rel-4">
-	  						<span class="overlay">4</span>
-							</span>
-			    		<h3>World Briefing | Europe: Ukraine: New Prime Minister</h3>
-			    		<div class="neighbor-buttons">
-			    			<a href="#0">DL</a>
-			    			<a class="n-view" href="#0" data-type="panel-3"><img src="images/elements/icon-preview.png" alt=""></a>
-			    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
-			    		</div><!--neighbor-buttons-->
-			    	</div><!--neighbor-item-->
+					    	<div class="neighbor-item clearfix">
+						    	<span class="relevancy rel-3">
+			  						<span class="overlay">3</span>
+									</span>
+					    		<h3>World Briefing | Europe: Ukraine: Journalist’s Body Identified</h3>
+									<div class="neighbor-buttons">
+					    			<a href="#0">DL</a>
+					    			<a class="n-view" href="#0" data-type="panel-4"><img src="images/elements/icon-preview.png" alt=""></a>
+					    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
+					    		</div><!--neighbor-buttons-->
+					    	</div><!--neighbor-item-->
 
-			    	<div class="neighbor-item clearfix">
-				    	<span class="relevancy rel-3">
-	  						<span class="overlay">3</span>
-							</span>
-			    		<h3>World Briefing | Europe: Ukraine: Journalist’s Body Identified</h3>
-							<div class="neighbor-buttons">
-			    			<a href="#0">DL</a>
-			    			<a class="n-view" href="#0" data-type="panel-4"><img src="images/elements/icon-preview.png" alt=""></a>
-			    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
-			    		</div><!--neighbor-buttons-->
-			    	</div><!--neighbor-item-->
+					    	<div class="neighbor-item clearfix">
+						    	<span class="relevancy rel-2">
+			  						<span class="overlay">2</span>
+									</span>
+					    		<h3>Ukraine: Looking for a Fair Vote Count</h3>
+					    		<div class="neighbor-buttons">
+					    			<a href="#0">DL</a>
+					    			<a class="n-view" href="#0" data-type="panel-5"><img src="images/elements/icon-preview.png" alt=""></a>
+					    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
+					    		</div><!--neighbor-buttons-->
+					    	</div><!--neighbor-item-->
 
-			    	<div class="neighbor-item clearfix">
-				    	<span class="relevancy rel-2">
-	  						<span class="overlay">2</span>
-							</span>
-			    		<h3>Ukraine: Looking for a Fair Vote Count</h3>
-			    		<div class="neighbor-buttons">
-			    			<a href="#0">DL</a>
-			    			<a class="n-view" href="#0" data-type="panel-5"><img src="images/elements/icon-preview.png" alt=""></a>
-			    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
-			    		</div><!--neighbor-buttons-->
-			    	</div><!--neighbor-item-->
-
-			    	<div class="neighbor-item clearfix">
-				    	<span class="relevancy rel-1">
-	  						<span class="overlay">1</span>
-							</span>
-			    		<h3>$7.4 Billion in Revenues, but No Name</h3>
-			    		<div class="neighbor-buttons">
-			    			<a href="#0">DL</a>
-			    			<a class="n-view" href="#0" data-type="panel-6"><img src="images/elements/icon-preview.png" alt=""></a>
-			    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
-			    		</div><!--neighbor-buttons-->
-			    	</div><!--neighbor-item-->
+					    	<div class="neighbor-item clearfix">
+						    	<span class="relevancy rel-1">
+			  						<span class="overlay">1</span>
+									</span>
+					    		<h3>$7.4 Billion in Revenues, but No Name</h3>
+					    		<div class="neighbor-buttons">
+					    			<a href="#0">DL</a>
+					    			<a class="n-view" href="#0" data-type="panel-6"><img src="images/elements/icon-preview.png" alt=""></a>
+					    			<a class="n-xml" href="#0"><img src="images/elements/icon-xml-dark.png" alt=""></a>
+					    		</div><!--neighbor-buttons-->
+					    	</div><!--neighbor-item-->
+				    	</div>
 					</div><!--main-results-->
 					<div class="customer-generetad-data">
 						<div class="neighbor-generated-data">
@@ -330,7 +335,7 @@
 				<div class="col-md-3 col-sm-4 col-xs-12">
 					<div class="sidebar">
 						<h5>Document Tags</h5>
-						<div class="sidebar-tags">
+						<div id="document_tags" class="sidebar-tags">
 							<div class="tag" href="#0">Firm</div>
 							<div class="tag" href="#0">Kpmg Peat Marw</div>
 							<div class="tag" href="#0">Peat Marwick</div>
@@ -345,7 +350,7 @@
 						</div>
 
 						<h5>Semantic Tags</h5>
-						<div class="sidebar-tags">
+						<div id="semantic_tags" class="sidebar-tags">
 							<div class="tag" href="#0">Firm</div>
 							<div class="tag opacity-70" href="#0">Kpmg Peat Marw</div>
 							<div class="tag opacity-70" href="#0">Peat Marwick</div>
@@ -366,193 +371,23 @@
 	</section><!--results-->
 	<div class="wrap-overlay"></div>
 </div><!--wrapper-->
-<div class="sliding-panel panel-1">
+
+<!-- slide panel -->
+<div id="slide_wrapper"></div>
+
+<div class="sliding-panel library-xml-panel">
 	<div class="sp-inner">
 		<div class="sp-inner-article">
 			<div class="sp-top-nav">
 				<div class="sp-top-nav-left clearfix">
-					<span class="relevancy rel-5">
-						<span class="overlay">5</span>
-					</span>
 					<div class="neighbor-buttons pull-left">
-	    			<a href="#0">DL</a>
-	    			<a class="n-view disabled" href="#0"><img src="images/elements/icon-preview.png" alt=""></a>
-	    		</div><!--neighbor-buttons-->
-				</div>
-				<div class="sp-top-nav-right">
-					<div class="sp-top-nav-arrows">
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-					</div>
+						<a href="#0">XML</a>
+						<a class="n-view disabled" href="#0"><img src="images/elements/icon-preview.png" alt=""></a>
+					</div><!--neighbor-buttons-->
 				</div>
 			</div><!--sp-top-nav-->
 			<article class="sp-article">
-				<h1>World Briefing | Europe: Putin Checks In Before Election <a href="#0"><img src="images/elements/icon-source-dark.png" alt=""></a></h1>
-				<p>Optimism rose on Friday over the prospects of an accord between Greece and its international creditors, as the two sides weighed the latest measures from Athens aimed at overhauling its economy and securing its place in the euro currency bloc.</p>
-				<p>Prime Minister Alexis Tsipras’s government on Thursday agreed to meet most of the terms demanded by the creditors with a mix of tax increases and spending cuts, and it requested a three-year, 53.5 billion euro, or $59 billion, bailout as a starting point for talks about possible debt relief.</p>
-				<p>How lawmakers in Greece and the country’s creditors — the European Central Bank, the International Monetary Fund and the other eurozone countries, including a skeptical Germany — will receive the government’s latest proposal will determine whether the nation will be able to halt its economic tailspin and avoid a potentially chaotic exit from the eurozone.</p>
-				<p>But Mr. Tsipras sought a three-year bailout loan totaling 53.5 billion euros (about $59 billion) and asked creditors to commit to discussing restructuring the nation’s massive debt.</p>
-			</article>
-		</div><!--sp-inner-article-->
-		<a href="#0" class="close-sliding-panel visible-xs">Close</a>
-	</div><!--sp-inner-->
-</div><!--sliding-panel-->
 
-<div class="sliding-panel panel-2">
-	<div class="sp-inner">
-		<div class="sp-inner-article">
-			<div class="sp-top-nav">
-				<div class="sp-top-nav-left clearfix">
-					<span class="relevancy rel-5">
-						<span class="overlay">5</span>
-					</span>
-					<div class="neighbor-buttons pull-left">
-	    			<a href="#0">DL</a>
-	    			<a class="n-view disabled" href="#0"><img src="images/elements/icon-preview.png" alt=""></a>
-	    		</div><!--neighbor-buttons-->
-				</div>
-				<div class="sp-top-nav-right">
-					<div class="sp-top-nav-arrows">
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-					</div>
-				</div>
-			</div><!--sp-top-nav-->
-			<article class="sp-article">
-				<h1>World Briefing | Europe: Ukraine: Opposition Candidates <a href="#0"><img src="images/elements/icon-source-dark.png" alt=""></a></h1>
-				<p>Optimism rose on Friday over the prospects of an accord between Greece and its international creditors, as the two sides weighed the latest measures from Athens aimed at overhauling its economy and securing its place in the euro currency bloc.</p>
-				<p>Prime Minister Alexis Tsipras’s government on Thursday agreed to meet most of the terms demanded by the creditors with a mix of tax increases and spending cuts, and it requested a three-year, 53.5 billion euro, or $59 billion, bailout as a starting point for talks about possible debt relief.</p>
-				<p>How lawmakers in Greece and the country’s creditors — the European Central Bank, the International Monetary Fund and the other eurozone countries, including a skeptical Germany — will receive the government’s latest proposal will determine whether the nation will be able to halt its economic tailspin and avoid a potentially chaotic exit from the eurozone.</p>
-				<p>But Mr. Tsipras sought a three-year bailout loan totaling 53.5 billion euros (about $59 billion) and asked creditors to commit to discussing restructuring the nation’s massive debt.</p>
-			</article>
-		</div><!--sp-inner-article-->
-		<a href="#0" class="close-sliding-panel visible-xs">Close</a>
-	</div><!--sp-inner-->
-</div><!--sliding-panel-->
-
-
-<div class="sliding-panel panel-3">
-	<div class="sp-inner">
-		<div class="sp-inner-article">
-			<div class="sp-top-nav">
-				<div class="sp-top-nav-left clearfix">
-					<span class="relevancy rel-4">
-						<span class="overlay">4</span>
-					</span>
-					<div class="neighbor-buttons pull-left">
-	    			<a href="#0">DL</a>
-	    			<a class="n-view disabled" href="#0"><img src="images/elements/icon-preview.png" alt=""></a>
-	    		</div><!--neighbor-buttons-->
-				</div>
-				<div class="sp-top-nav-right">
-					<div class="sp-top-nav-arrows">
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-					</div>
-				</div>
-			</div><!--sp-top-nav-->
-			<article class="sp-article">
-				<h1>World Briefing | Europe: Ukraine: New Prime Minister <a href="#0"><img src="images/elements/icon-source-dark.png" alt=""></a></h1>
-				<p>Optimism rose on Friday over the prospects of an accord between Greece and its international creditors, as the two sides weighed the latest measures from Athens aimed at overhauling its economy and securing its place in the euro currency bloc.</p>
-				<p>Prime Minister Alexis Tsipras’s government on Thursday agreed to meet most of the terms demanded by the creditors with a mix of tax increases and spending cuts, and it requested a three-year, 53.5 billion euro, or $59 billion, bailout as a starting point for talks about possible debt relief.</p>
-				<p>How lawmakers in Greece and the country’s creditors — the European Central Bank, the International Monetary Fund and the other eurozone countries, including a skeptical Germany — will receive the government’s latest proposal will determine whether the nation will be able to halt its economic tailspin and avoid a potentially chaotic exit from the eurozone.</p>
-				<p>But Mr. Tsipras sought a three-year bailout loan totaling 53.5 billion euros (about $59 billion) and asked creditors to commit to discussing restructuring the nation’s massive debt.</p>
-			</article>
-		</div><!--sp-inner-article-->
-		<a href="#0" class="close-sliding-panel visible-xs">Close</a>
-	</div><!--sp-inner-->
-</div><!--sliding-panel-->
-
-<div class="sliding-panel panel-4">
-	<div class="sp-inner">
-		<div class="sp-inner-article">
-			<div class="sp-top-nav">
-				<div class="sp-top-nav-left clearfix">
-					<span class="relevancy rel-3">
-						<span class="overlay">3</span>
-					</span>
-					<div class="neighbor-buttons pull-left">
-	    			<a href="#0">DL</a>
-	    			<a class="n-view disabled" href="#0"><img src="images/elements/icon-preview.png" alt=""></a>
-	    		</div><!--neighbor-buttons-->
-				</div>
-				<div class="sp-top-nav-right">
-					<div class="sp-top-nav-arrows">
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-					</div>
-				</div>
-			</div><!--sp-top-nav-->
-			<article class="sp-article">
-				<h1>World Briefing | Europe: Ukraine: Journalist’s Body Identified <a href="#0"><img src="images/elements/icon-source-dark.png" alt=""></a></h1>
-				<p>Optimism rose on Friday over the prospects of an accord between Greece and its international creditors, as the two sides weighed the latest measures from Athens aimed at overhauling its economy and securing its place in the euro currency bloc.</p>
-				<p>Prime Minister Alexis Tsipras’s government on Thursday agreed to meet most of the terms demanded by the creditors with a mix of tax increases and spending cuts, and it requested a three-year, 53.5 billion euro, or $59 billion, bailout as a starting point for talks about possible debt relief.</p>
-				<p>How lawmakers in Greece and the country’s creditors — the European Central Bank, the International Monetary Fund and the other eurozone countries, including a skeptical Germany — will receive the government’s latest proposal will determine whether the nation will be able to halt its economic tailspin and avoid a potentially chaotic exit from the eurozone.</p>
-				<p>But Mr. Tsipras sought a three-year bailout loan totaling 53.5 billion euros (about $59 billion) and asked creditors to commit to discussing restructuring the nation’s massive debt.</p>
-			</article>
-		</div><!--sp-inner-article-->
-		<a href="#0" class="close-sliding-panel visible-xs">Close</a>
-	</div><!--sp-inner-->
-</div><!--sliding-panel-->
-
-<div class="sliding-panel panel-5">
-	<div class="sp-inner">
-		<div class="sp-inner-article">
-			<div class="sp-top-nav">
-				<div class="sp-top-nav-left clearfix">
-					<span class="relevancy rel-2">
-						<span class="overlay">2</span>
-					</span>
-					<div class="neighbor-buttons pull-left">
-	    			<a href="#0">DL</a>
-	    			<a class="n-view disabled" href="#0"><img src="images/elements/icon-preview.png" alt=""></a>
-	    		</div><!--neighbor-buttons-->
-				</div>
-				<div class="sp-top-nav-right">
-					<div class="sp-top-nav-arrows">
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-					</div>
-				</div>
-			</div><!--sp-top-nav-->
-			<article class="sp-article">
-				<h1>Ukraine: Looking for a Fair Vote Count <a href="#0"><img src="images/elements/icon-source-dark.png" alt=""></a></h1>
-				<p>Optimism rose on Friday over the prospects of an accord between Greece and its international creditors, as the two sides weighed the latest measures from Athens aimed at overhauling its economy and securing its place in the euro currency bloc.</p>
-				<p>Prime Minister Alexis Tsipras’s government on Thursday agreed to meet most of the terms demanded by the creditors with a mix of tax increases and spending cuts, and it requested a three-year, 53.5 billion euro, or $59 billion, bailout as a starting point for talks about possible debt relief.</p>
-				<p>How lawmakers in Greece and the country’s creditors — the European Central Bank, the International Monetary Fund and the other eurozone countries, including a skeptical Germany — will receive the government’s latest proposal will determine whether the nation will be able to halt its economic tailspin and avoid a potentially chaotic exit from the eurozone.</p>
-				<p>But Mr. Tsipras sought a three-year bailout loan totaling 53.5 billion euros (about $59 billion) and asked creditors to commit to discussing restructuring the nation’s massive debt.</p>
-			</article>
-		</div><!--sp-inner-article-->
-		<a href="#0" class="close-sliding-panel visible-xs">Close</a>
-	</div><!--sp-inner-->
-</div><!--sliding-panel-->
-
-<div class="sliding-panel panel-6">
-	<div class="sp-inner">
-		<div class="sp-inner-article">
-			<div class="sp-top-nav">
-				<div class="sp-top-nav-left clearfix">
-					<span class="relevancy rel-1">
-						<span class="overlay">1</span>
-					</span>
-					<div class="neighbor-buttons pull-left">
-	    			<a href="#0">DL</a>
-	    			<a class="n-view disabled" href="#0"><img src="images/elements/icon-preview.png" alt=""></a>
-	    		</div><!--neighbor-buttons-->
-				</div>
-				<div class="sp-top-nav-right">
-					<div class="sp-top-nav-arrows">
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-						<a href="#0"><img src="images/elements/icon-arrow.png" alt=""></a>
-					</div>
-				</div>
-			</div><!--sp-top-nav-->
-			<article class="sp-article">
-				<h1>$7.4 Billion in Revenues, but No Name <a href="#0"><img src="images/elements/icon-source-dark.png" alt=""></a></h1>
-				<p>Optimism rose on Friday over the prospects of an accord between Greece and its international creditors, as the two sides weighed the latest measures from Athens aimed at overhauling its economy and securing its place in the euro currency bloc.</p>
-				<p>Prime Minister Alexis Tsipras’s government on Thursday agreed to meet most of the terms demanded by the creditors with a mix of tax increases and spending cuts, and it requested a three-year, 53.5 billion euro, or $59 billion, bailout as a starting point for talks about possible debt relief.</p>
-				<p>How lawmakers in Greece and the country’s creditors — the European Central Bank, the International Monetary Fund and the other eurozone countries, including a skeptical Germany — will receive the government’s latest proposal will determine whether the nation will be able to halt its economic tailspin and avoid a potentially chaotic exit from the eurozone.</p>
-				<p>But Mr. Tsipras sought a three-year bailout loan totaling 53.5 billion euros (about $59 billion) and asked creditors to commit to discussing restructuring the nation’s massive debt.</p>
 			</article>
 		</div><!--sp-inner-article-->
 		<a href="#0" class="close-sliding-panel visible-xs">Close</a>
@@ -560,19 +395,15 @@
 </div><!--sliding-panel-->
 
 <script>
-  $('#fine-uploader-manual-trigger').fineUploader({
-      template: 'qq-template-manual-trigger',
-      autoUpload: true,
-      multiple: false,
-      interceptSubmit: false
-  });
+  $.cookie('pageID', 'library');
 </script>
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="js/autosize.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-
+<script type="text/javascript" src="js/loading_animation.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
 
 </body>
 </html>

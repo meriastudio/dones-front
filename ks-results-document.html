@@ -14,8 +14,9 @@
 <link href="js/jquery.fine-uploader/fine-uploader-new.min.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/jquery.fine-uploader/jquery.fine-uploader.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
 
 <script type="text/javascript" src="js/vendors/modernizr.js"></script>
 <script type="text/template" id="qq-template-manual-trigger">
@@ -76,7 +77,7 @@
 <body class="inner-page overflow-hidden">
 <div class="wrapper slide-out">
 	<header>
-		<a href="#0" class="logo"><img src="images/public/dones-logo.png" alt="">Dones</a>
+		<a href="index.html" class="logo"><img src="images/public/dones-logo.png" alt="">Dones</a>
 		<div class="help-container pull-right">
 			<a class="xml-link" href="#0"><img src="images/elements/icon-xml.png" alt=""></a>
 			<a class="info-link" href="#0">i</a>
@@ -97,7 +98,7 @@
 	  	<div class="tab-content clearfix">
 		    <div role="tabpanel" class="tab-pane fade" id="metadata">
 		    	<div class="select-wrapper right caret-reverse">
-		    		<select class="selectpicker" data-size="10">
+		    		<select class="selectpicker" id="metatopic" data-size="10">
 							<option title="1 topic" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
 							<option title="2 topics" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
 							<option title="3 topics" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
@@ -112,7 +113,7 @@
 		    	</div><!--select-wrapper-->
 
 		    	<div class="select-wrapper right caret-reverse">
-		    		<select class="selectpicker" data-size="10">
+		    		<select class="selectpicker" id="metaneighbor" data-size="10">
 							<option title="1 neighbor" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
 							<option title="2 neighbors" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
 							<option title="3 neighbors" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
@@ -131,7 +132,7 @@
 						<button class="search-submit" disabled>¥</button>
 					</form>
 		    </div><!--tab-panel-->
-		    <div role="tabpanel" class="tab-pane fade fade in active" id="keyword">
+		    <div role="tabpanel" class="tab-pane fade in active" id="keyword">
 		    	<form class="search" action="">
 						<div class="search-input-wrap"><textarea class="search-input" type="text" rows="1" placeholder="Search..."></textarea></div>
 						<button class="search-submit" disabled>¥</button>
@@ -147,26 +148,26 @@
 						<button class="search-submit browse-submit" disabled>¥</button>
 					</form>
 		    </div><!--tabpanel-->
-		    <div role="tabpanel" class="tab-pane" id="library">
+		    <div role="tabpanel" class="tab-pane fade" id="library">
 		    	<div class="select-wrapper pull-right caret-reverse">
-		    		<select class="selectpicker" data-size="10">
-							<option title="1 neighbor" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
-							<option title="2 neighbors" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
-							<option title="3 neighbors" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
-							<option title="4 neighbors" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
-							<option title="5 neighbors" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
-							<option title="6 neighbors" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
-							<option title="7 neighbors" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
-							<option title="8 neighbors" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
-							<option title="9 neighbors" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
-							<option title="10 neighbors" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
-						</select>
+		    		<select class="selectpicker" id="libneighbor" data-size="10">
+						<option title="1 neighbor" value="1" data-content="<span class='topic-number'>1</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">1</option>
+						<option title="2 neighbors" value="2" data-content="<span class='topic-number'>2</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">2</option>
+						<option title="3 neighbors" value="3" data-content="<span class='topic-number'>3</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">3</option>
+						<option title="4 neighbors" value="4" data-content="<span class='topic-number'>4</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">4</option>
+						<option title="5 neighbors" value="5" data-content="<span class='topic-number'>5</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">5</option>
+						<option title="6 neighbors" value="6" data-content="<span class='topic-number'>6</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">6</option>
+						<option title="7 neighbors" value="7" data-content="<span class='topic-number'>7</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">7</option>
+						<option title="8 neighbors" value="8" data-content="<span class='topic-number'>8</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">8</option>
+						<option title="9 neighbors" value="9" data-content="<span class='topic-number'>9</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">9</option>
+						<option title="10 neighbors" value="10" data-content="<span class='topic-number'>10</span><span class='topic-hover'>World Briefing | Europe: Ukraine: New Prime Minister</span>">10</option>
+					</select>
 		    	</div><!--select-wrapper-->
 
-					<form class="search" action="">
-						<div class="search-input-wrap"><textarea class="search-input" type="text" rows="1" placeholder="Search..."></textarea></div>
-						<button class="search-submit" disabled>¥</button>
-					</form>
+				<form class="search" action="">
+					<div class="search-input-wrap"><textarea class="search-input" type="text" rows="1" placeholder="Search..."></textarea></div>
+					<button class="search-submit" disabled>¥</button>
+				</form>
 		    </div><!--tab-panel-->
 		  </div><!--tabs-content-->
 	  </div><!--tabs-content-wrapper-->
@@ -586,7 +587,8 @@
 <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="js/autosize.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-
+<script type="text/javascript" src="js/loading_animation.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
 
 </body>
 </html>
